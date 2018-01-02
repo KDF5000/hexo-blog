@@ -1,0 +1,40 @@
+language: node_js
+node_js: stable
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install
+
+before_script:
+  - npm install -g gulp
+
+script:
+  - gulp build
+
+after_script:
+  - cd public
+  - git init
+  - git config user.name "KDF5000"
+  - git config user.email "kdf5000@163.com"
+  - git add .
+  - git commit -m "Update blog"
+  - git push --force --quiet "https://${GH_TOKEN}@${GIT_PAGE_REF}" master:master
+  
+branches:
+  only:
+    - master
+
+env:
+  global:
+      - GIT_PAGE_REF: github.com/KDF5000/kdf5000.github.io.git
+      - secure: "PQFfj3XsfYToDxiDRULwZM4CLpokKQk83RUFG9YUqod8ZXmO1gnSPv8jpcwIaDniZ845C2Ttcj009VP8hjTYdVxXyDw3tgLDjVzKxe86oP3vQF6ZEocZit4YqLpRVY1KedXTueTrdXBH7tohqZzu1sxfRbKtR/LvEt47L+x8yypizCEoCQGVeyw40TjSYDzuyrZ2EWRFs+I/4D/eGg0dALWdlb2wKNwvsjbSjJSIG8899dwe6FGZumwYEG60640ZUHt7ZrPcskR986SKEcuUus6CKbJa26hPOIjqS4pNXEUUpkEEtVGKrmt76EKPfC5nfChqGEBr5ES/cyn1raHbwyofTWKKflUKdaRcRA5EzJeKUCJg0qm4PnQ2wq4aetzH6g7ee3uM42eYIrguAi1uMq1//+FqSAIqB6sPaSiCzO8NZiYsaNyQEYFCniDE8woNItlvf499y1Auqx58ZMRd6fyW6GaM3ZlUVJeSa55FWpNBzYbuVLzqctWOTCqirnesOIPtSMC6shhMIUQiiKxtklpp1h/aDAQti28+jxqRl0GfnWYxhN2MddhSci6ZvW2j5dXO9y/THkO11X1gNwkGn7cEczMrqo8RxAmYWJxwj+M5t042AvJw6+/FmjqDWQCc4vbtRqx72X8sa/lbmSKGSfcu2wcZhHQunUwD+L9PPYo="
+
+notifications:
+  email:
+    - kdf5000@163.com
+
+  on_success: change
+  on_failure: always
