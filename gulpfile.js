@@ -66,19 +66,29 @@ gulp.task('minify-js', function() {
 });
 
 gulp.task('minify-img', function() {
-    return gulp.src('./public/images/*')
+    return gulp.src('./public/images/**/*.*')
         .pipe(imagemin())
         .pipe(gulp.dest('./public/images'))
 })
 
+gulp.task('minify-img-aggressive', function() {
+    return gulp.src('./public/images/**/*.*')
+        .pipe(imagemin(
+        [imagemin.gifsicle({'optimizationLevel': 3}), 
+        imagemin.jpegtran({'progressive': true}), 
+        imagemin.optipng({'optimizationLevel': 7}), 
+        imagemin.svgo()],
+        {'verbose': true}))
+        .pipe(gulp.dest('./public/images'))
+})
+
 gulp.task('compress', function(cb) {
-    runSequence(['minify-html', 'minify-css', 'minify-js', 'minify-img'], cb);
+    runSequence(['minify-html', 'minify-css', 'minify-js', 'minify-img-aggressive'], cb);
 });
 
-
-//gulp.task('build', ['clean', 'generate', 'compress']);
 gulp.task('build', function(cb) {
     runSequence('clean', 'generate', 'compress', cb)
 });
 
-gulp.task('default', ["build"])
+gulp.task('default', ['build'])
+
