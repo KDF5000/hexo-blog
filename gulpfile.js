@@ -7,6 +7,7 @@
 */
 
 var gulp = require('gulp');
+var log = require("fancy-log");
 var minifycss = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
@@ -61,7 +62,7 @@ gulp.task('minify-html', function() {
 
 gulp.task('minify-js', function() {
     return gulp.src('./public/**/*.js')
-        .pipe(uglify())
+        .pipe(uglify().on("error",log))
         .pipe(gulp.dest('./public'));
 });
 
