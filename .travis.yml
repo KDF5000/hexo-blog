@@ -1,5 +1,5 @@
 language: node_js
-node_js: 7
+node_js: 13
 
 cache:
   directories:
@@ -10,6 +10,7 @@ install:
 
 before_script:
   - npm install -g gulp
+  - git submodule init
 
 script:
   - gulp build
