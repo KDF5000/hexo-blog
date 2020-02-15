@@ -1,6 +1,6 @@
+[submodule "themes/reading"]
+	path = themes/reading
+	url = https://github.com/KDF5000/yinwang
 [submodule "source/resume"]
 	path = source/resume
 	url = https://github.com/KDF5000/minimal.git
-[submodule "themes/fexo"]
-	path = themes/fexo
-	url = https://github.com/KDF5000/fexo.git
