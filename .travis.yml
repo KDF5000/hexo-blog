@@ -21,7 +21,7 @@ after_script:
   - git config user.email "kdf5000@163.com"
   - git add .
   - git commit -m "Update blog"
-  - git push --force --quiet "https://${GH_TOKEN}@${GIT_PAGE_REF}" master:master
+  - git push --force "https://${GH_TOKEN}@${GIT_PAGE_REF}" master:master
   
 branches:
   only:
@@ -30,7 +30,7 @@ branches:
 env:
   global:
       - GIT_PAGE_REF: github.com/KDF5000/kdf5000.github.io.git
-      - GH_TOKEN: ecd0f317439c701c1b1e30594a60c14698730ee
+      - GH_TOKEN: decd0f317439c701c1b1e30594a60c14698730ee
 
 notifications:
   email:
