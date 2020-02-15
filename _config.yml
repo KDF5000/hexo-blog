@@ -85,5 +85,4 @@ deploy:
   type: git
   repository: https://github.com/KDF5000/kdf5000.github.io.git
   branch: master
-
 #skip_render: 'resume/**'
