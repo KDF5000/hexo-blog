@@ -30,7 +30,7 @@ branches:
 env:
   global:
       - GIT_PAGE_REF: github.com/KDF5000/kdf5000.github.io.git
-      - GH_TOKEN: decd0f317439c701c1b1e30594a60c14698730ee
+      - GH_TOKEN: 029def9c5760531df97c8143b7d11b73090da770
 
 notifications:
   email:
