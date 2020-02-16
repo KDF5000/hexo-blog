@@ -20,7 +20,7 @@ tags: [Distributed System, Object Storage, Ambry, Haystack]
 * 能够很好的解决负载均衡的问题
 
 ## 架构
-![ambry-arch.png](http://7sbpmg.com1.z0.glb.clouddn.com/blog/images/ambry-arch.png)
+![ambry-arch.png](/images/archive/blog/images/ambry-arch.png)
 Ambry主要有Cluster Manager，Datanode，Frontend三个组件。在介绍每个组件负责的职责前，先介绍Ambry里的一个重要概念: partition.
 
 **Partition:** Partition是Ambry里的最小的存储单元，是一个虚拟的概念，相当于haystack里的Logical Volume,  Twitter BlobStore里的Virtual Bucket，Partition在实现的时候实际上是一个大的文件，存放着成千上万的小文件，并且作为replication的最小单位。因为存在replication，所以每个parition对应着多个位于不同节点，甚至不同机架和数据中心的物理文件，每个文件的大小通常100G，尽可能大，但是不能太大，因为移动数据的时候可能会消耗太多的时间。
@@ -39,9 +39,9 @@ Frontend有一个重要的模块叫Router Library，主要用于请求的转发�
 ## 索引、Journal和Bloom Filter
 ### 索引
 前面提到Datanode的主要作用就是存储不同的paitition，每个partition内保存了成千上万的小blob，每个blob在Partition的布局如下图：
-![ambry-blob layout.png](http://7sbpmg.com1.z0.glb.clouddn.com/blog/images/ambry-blob layout.png)
+![ambry-blob_layout.png](/images/archive/blog/images/ambry-blob_layout.png)
 当增加一个blob的时候直接append到特定的partition即可。那么当获取一个blob的时候怎么才能够快速地找到相应的数据呢？为此Ambry为每一个Partition创建了一个索引，保存了每个Blob在paitition文件中的偏移位置，大小等信息，不过建索引不是什么新鲜的东西，Haystack也有。但是Linkedin的工程师并没有就此止步，他们为了节约成本，减少索引占用的内存，Ambry讲索引分成不同的segment，然后只有经常访问的blob，也就是热索引才会常驻内存，然后那些冷数据通过在内存维护一个布隆过滤器，当访问冷数据的时候现在布隆过滤器里查找是否存在其对应的索引段，然后再决定加载那段索引 ，从而在保证用少量内存的情况下依然能够有较高的访问速度。
-![ambry-index.png](http://7sbpmg.com1.z0.glb.clouddn.com/blog/images/ambry-index.png)
+![ambry-index.png](/images/archive/blog/images/ambry-index.png)
 ### replication和Journal
 replication是保证数据可靠性的一个有效方法，通常在保证数据的一致性上最经典的做法就是使用Paxos等协议，但是在对象存储的场景下，直接向所有或者多数的副本节点发送同步或者异步的请求就可以了，大大的简化了实现难度，并且保证了延迟，如果使用一致性协议则会大大的增加延迟(个人的猜测，也许不是这个原因)。Ambry的replication发生在put操作时候，客户端向Frontend发送put请求，然后根据贪心的策略选择replication的位置，选择的时候根据下面两个原则：
 - 不能再同一个Datanode
@@ -53,7 +53,7 @@ replication是保证数据可靠性的一个有效方法，通常在保证数据
 - 请求lastOffset后的所有blob id，然后过滤掉本地已经有的blob
 - 请求missing的blob
 
-![ambry-replication.png](http://7sbpmg.com1.z0.glb.clouddn.com/blog/images/ambry-replication.png)
+![ambry-replication.png](/images/archive/blog/images/ambry-replication.png)
 
 ## 负载均衡
 负载均衡是Ambry相对于Haystack的一个重要的不同点，针对业务请求负载可能的倾斜，大量大的blobs以及集群节点的变化导致的负载不均衡，Ambry提出了分别针对静态集群，以及动态添加节点时候两种情况提出了自己的均衡算法。
@@ -62,7 +62,7 @@ replication是保证数据可靠性的一个有效方法，通常在保证数据
 
 ### 动态集群
 对于新增节点的情况，因为新增节点，那么其上面的partition的状态都是可写的，因为新写入的数据往往有更大可能性被访问，因此新节点的partition往往承担大量的读和写，所以导致访问严重不均。Ambry使用了一个rebanlance的算法，该算法定义了一个理想下的读写，只读，磁盘使用率，计算方法都是根据整个集群当前读写状态的，只读磁盘，以及所有使用的磁盘除以整个集群所有的磁盘数得到；然后将每个磁盘上RW, RO状态的partition放入一个pool，最后将pool里的partition分发给低于理想状态的磁盘。整个算法的伪代码如下:
-![ambry-reblance.png](http://7sbpmg.com1.z0.glb.clouddn.com/blog/images/ambry-reblance.png)
+![ambry-reblance.png](/images/archive/blog/images/ambry-reblance.png)
 
 那么如何移动一个partition到另一个节点呢？Ambry分为三个阶段去安全的移动Partition
 - 在新的datanode创键一个replica

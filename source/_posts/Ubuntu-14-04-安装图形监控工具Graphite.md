@@ -75,7 +75,7 @@ $sudo cp /opt/graphite/examples/example-graphite-vhost.conf    /etc/apache2/site
 ```
 然后在编辑修改监听端口为8008以及一个WSGISocketPrefix的默认目录，修改后如下：
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_graphite_install_vhost.png)
+![](/images/archive/img_graphite_install_vhost.png)
 
 在**/etc/apache2/sites-enable**下建立该配置文件的软链接
 ```
@@ -110,11 +110,11 @@ $ sudo ./bin/carbon-cache.py start
 ```
 此时在浏览器访问**http://localhost:8008**，看到下面页面说明配置成功
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_graphite_index_page.png)
+![](/images/archive/img_graphite_index_page.png)
 
 如果出现没有权限访问的错误页面，可以修改`Apache`配置文件/etc/pache2/apache2.conf,找到下图中的位置，注释掉**Require  all denied** ，然后重启`Apache`再次访问。
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_apache_directory.png)
+![](/images/archive/img_apache_directory.png)
 
 ####修改`Graphite`默认的时区
 打开**/opt/graphite/webapp/graphite/setting.py**，找到`TIME_ZONE`，默认是**UTC**，将其修改为**Asia/Shanghai**

@@ -22,7 +22,7 @@ mathjax: true
 ####确定解空间
 假设有四个城市A,B,C,D, 从A出发,求经过所有顶点后回到A的最短路径,我们用树表示所有的解,前面已经说过是一个$(n-1)!$排列树,如下图所示:
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_tsp.png)
+![](/images/archive/img_tsp.png)
 
 ####确定约束条件和边界条件
 假设用cl表示从A出发到当前节点的的路径长度,fl表示当前最短的环路长度.k表示路径中第k个节点,$x_k$表示第k个点选择的城市编号(A-D编号为1-4),w为邻接矩阵.
@@ -40,7 +40,7 @@ $$fl = cl+w[x\_{k-1},x\_k] + w[x\_k,1]$$
 搜索的问题就比较简单了,按照DFS的思路搜索就行了,当然特定的问题可以进行一些优化.然后搜索的过程使用约束条件的边界条件进行剪枝和更新最有路径.
 
 下面是伪代码:
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_tsp_pseudocode.png)
+![](/images/archive/img_tsp_pseudocode.png)
 
 用java实现如下所示
 ```

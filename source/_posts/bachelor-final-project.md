@@ -17,7 +17,7 @@ categories: [Think]
 <div align=center>
  <iframe 
     width=768 height=432  
-    src="http://7sbpmg.com1.z0.glb.clouddn.com/vedio/moment.mp4"   
+    src="/images/archive/video/moment.mp4"   
     frameborder=0 allowfullscreen play="false">  
  </iframe>
 </div> 
@@ -25,16 +25,16 @@ categories: [Think]
 <!-- more -->
 
 答辩PPT截图：
-![](http://7sbpmg.com1.z0.glb.clouddn.com/images/moment/%E5%B9%BB%E7%81%AF%E7%89%8701.jpg)
-![](http://7sbpmg.com1.z0.glb.clouddn.com/images/moment/%E5%B9%BB%E7%81%AF%E7%89%8702.jpg)
-![](http://7sbpmg.com1.z0.glb.clouddn.com/images/moment/%E5%B9%BB%E7%81%AF%E7%89%8703.jpg)
-![](http://7sbpmg.com1.z0.glb.clouddn.com/images/moment/%E5%B9%BB%E7%81%AF%E7%89%8704.jpg)
-![](http://7sbpmg.com1.z0.glb.clouddn.com/images/moment/%E5%B9%BB%E7%81%AF%E7%89%8705.jpg)
-![](http://7sbpmg.com1.z0.glb.clouddn.com/images/moment/%E5%B9%BB%E7%81%AF%E7%89%8706.jpg)
-![](http://7sbpmg.com1.z0.glb.clouddn.com/images/moment/%E5%B9%BB%E7%81%AF%E7%89%8707.jpg)
-![](http://7sbpmg.com1.z0.glb.clouddn.com/images/moment/%E5%B9%BB%E7%81%AF%E7%89%8708.jpg)
-![](http://7sbpmg.com1.z0.glb.clouddn.com/images/moment/%E5%B9%BB%E7%81%AF%E7%89%8709.jpg)
-![](http://7sbpmg.com1.z0.glb.clouddn.com/images/moment/%E5%B9%BB%E7%81%AF%E7%89%8710.jpg)
-![](http://7sbpmg.com1.z0.glb.clouddn.com/images/moment/%E5%B9%BB%E7%81%AF%E7%89%8711.jpg)
-![](http://7sbpmg.com1.z0.glb.clouddn.com/images/moment/%E5%B9%BB%E7%81%AF%E7%89%8712.jpg)
-最后附上当时答辩的PPT：[答辩ppt](http://7sbpmg.com1.z0.glb.clouddn.com/vedio/Moment.pptx)
+![](/images/archive/images/moment/幻灯片01.jpg)
+![](/images/archive/images/moment/幻灯片02.jpg)
+![](/images/archive/images/moment/幻灯片03.jpg)
+![](/images/archive/images/moment/幻灯片04.jpg)
+![](/images/archive/images/moment/幻灯片05.jpg)
+![](/images/archive/images/moment/幻灯片06.jpg)
+![](/images/archive/images/moment/幻灯片07.jpg)
+![](/images/archive/images/moment/幻灯片08.jpg)
+![](/images/archive/images/moment/幻灯片09.jpg)
+![](/images/archive/images/moment/幻灯片10.jpg)
+![](/images/archive/images/moment/幻灯片11.jpg)
+![](/images/archive/images/moment/幻灯片12.jpg)
+最后附上当时答辩的PPT：[答辩ppt](/images/archive/video/Moment.pptx)

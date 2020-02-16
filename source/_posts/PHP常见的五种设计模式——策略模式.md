@@ -8,7 +8,7 @@ categories: [Tech]
 在此模式中，算法是从复杂类提取的，因而可以方便地替换。例如，如果要更改搜索引擎中排列页的方法，则策略模式是一个不错的选择。思考一下搜索引擎的几个部分 —— 一部分遍历页面，一部分对每页排列，另一部分基于排列的结果排序。在复杂的示例中，这些部分都在同一个类中。通过使用策略模式，您可将排列部分放入另一个类中，以便更改页排列的方式，而不影响搜索引擎的其余代码.
 
 类图如下：
-![Alt text](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/strategy.png)
+![Alt text](/images/archive/blog/image/strategy.png)
 
 <!--more-->
 

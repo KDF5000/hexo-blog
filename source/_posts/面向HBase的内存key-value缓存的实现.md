@@ -32,9 +32,9 @@ categories: [Tech]
 
 ### 0x03 实现
 系统的整体架构图如下
-![Alt text](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/hydracache/0.png)
+![Alt text](/images/archive/blog/image/hydracache/0.png)
 按照0x02的方案，要实现的是图中的client，对原生的hbase client进行封装，包括redis主要实现了如下功能
-![Alt text](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/hydracache/Functions.png)
+![Alt text](/images/archive/blog/image/hydracache/Functions.png)
 主要包括redis集群的实现，以及redis client的封装和localcache的实现。
 * Redis集群部署：可以快速的搭建一个redis集群，用于HydraCache缓存系统的分布式缓存。
 * Redis缓存：使用Redis缓存关键数据，提高系统的读取速度。
@@ -52,7 +52,7 @@ categories: [Tech]
 #### Redis集群的搭建
 Redis是一个高性能的key-value数据库，由于其数据是放在内存中的，因此经常被用做缓存系统，提供系统的响应速度，不过与像memcached这样的内存缓存系统不同的是，redis会周期性地把数据写入磁盘。
 Redis 3.0后开始支持集群的部署，整个集群的架构如图
-![Alt text](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/hydracache/redis-cluster.jpg)
+![Alt text](/images/archive/blog/image/hydracache/redis-cluster.jpg)
 Redis 集群中内置了 16384 个哈希槽，当需要在 Redis 集群中放置一个 key-value 时，redis 先对 key 使用 CRC16 算法算出一个结果，然后把结果对 16384 求余数，这样每个 key 都会对应一个编号在 0-16383 之间的哈希槽，redis 会根据节点数量大致均等的将哈希槽映射到不同的节点。
     使用哈希槽的好处就在于可以方便的添加或移除节点。
 * 当需要增加节点时，只需要把其他节点的某些哈希槽挪到新节点就可以了；
@@ -63,7 +63,7 @@ Redis 集群中内置了 16384 个哈希槽，当需要在 Redis 集群中放置
 #### Client的实现
 　　　Client主要对HBase Client进行封装，结合Redis实现缓存机制，并且实现一个LocalCache的功能。通过Redis缓存，可以实现多个客户端共享缓存的数据，缩短响应时间，LocalCache提高了同一个客户端读取近期读取的数据的响应速度，对于有些场景下的应用，可以减少通信时间从而减少了响应时间。
 　　　Redis和HBase封装的类如图
-　　　![Alt text](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/hydracache/class.png)
+　　　![Alt text](/images/archive/blog/image/hydracache/class.png)
 由图可知，Client大致分为三个部分，HydraCacheClientImpl，Cache(LocalCache)和RedisCluster.
 HydraCacheImpl负责是Client对外的核心接口，调用Cache和RedisCluster控制整个缓存策略。一共有四中模式，不使用缓存，只使用Redis, 只使用LocalCache, Redis和LocalCache都使用。
 * 不使用缓存模式下，内部其实就是HBase Client的一个简单调用；
@@ -72,7 +72,7 @@ HydraCacheImpl负责是Client对外的核心接口，调用Cache和RedisCluster�
 * 使用Redis和LocalCache模式，在读取数据的时候会先判断本地缓存中是否存在对应的数据，如果存在则直接返回，否则读取redis判断是否存在相应数据，如果存在则直接返回，否则再从HBase读取然后分别存入本地缓存和redis里.
 
 缓存策略流程图如下
-![Alt text](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/hydracache/cacheprocess.png)
+![Alt text](/images/archive/blog/image/hydracache/cacheprocess.png)
 HydraCacheImpl实现数据的缓存主要是在进行get操作中进行，如果缓存中没有命中，则读取hbase，然后对数据进行缓存。核心代码(省去异常判断)如下:
 ```
 public String get(String tableName, String rowKey, String family, String columnName, int expireTime) {
@@ -147,7 +147,7 @@ LocalCache实现了LRU和LFU两种缓存策略，用户可以根据自己的业�
 Hbase集群使用docker搭建，运行在本地机器上，启动三个节点，一个master，两个slave。Redis集群同样运行在本地机器上，使用不同的端口代表一个redis实例，一共启动六个，三个作为master，三个分别作为master的slave。
 
 为了测试hbase原声client和hydraCache的性能，我们开发了一个HBench用于产生数据集和负载，写入hbase的数据集是一个顺序序列，负载读取用的数据集随机生成。主要测试了get操作的性能，测试的模式涵盖了第五节中的四种模式。在数据集规模的选择上，分别进行了四组规模的数据集，分别是300, 600,900和1200条数据。测试的结果如图
-![Alt text](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/hydracache/Size-Time_2.png)
+![Alt text](/images/archive/blog/image/hydracache/Size-Time_2.png)
 
 图中每一组第第一列代表使用原生hbase客户端读取相应条数数据的时间，第二列是单独使用redis缓存所需的时间，第三列是使用LocalCache所需时间，第四列是同时使用redis和LocalCache所消耗的时间。从图中可以看出，使用缓存的响应时间明显要小于不适用缓存，使用缓存的情况下，仅仅使用LocalCache的时间是最短的，次之是同时使用redis和localCache，然后是单独使用redis。这与预期的结果还是比较一致的，使用缓存的情况下，由于在第二次读取某些key值的时候会从缓存中读取，这比从hbase中读取要快的多，而从localcache中读取数据因为减少了网络通信通信所以时间要更少一些。而同时使用redis和localcache的时间介于两者之间的原因应该是，读取数据的时候大部分情况下是可以从localcache中读取的，但是在设置缓存的时候要保存数据到redis，因此增加了操作的时间，故总的响应时间要多于单独使用localcache但是要比单独使用redis稍微好那么一点，不过并不是很明显。
  

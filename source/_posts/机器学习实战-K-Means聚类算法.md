@@ -112,7 +112,7 @@ if __name__ == "__main__":
     pl.show()
 ```
 结果如下:
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_figure_1.png)
+![](/images/archive/img_figure_1.png)
 图中红色的点是四个簇的质心,可以看出k-means的聚类效果还是挺好的.
 
 [源码下载](https://github.com/KDF5000/MLPractice/tree/master/ch10)

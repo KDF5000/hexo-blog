@@ -14,9 +14,9 @@ categories: [Tech]
 `Composer`的需要`PHP 5.3.2+`才能运行
 #####`Windows`下安装
 进入`Composer`的[官网](https://getcomposer.org/download/)下载`Windows Installer`进行安装，安装的前提是你已经安装了`PHP`，安装过程中会让你选择`PHP`的可执行程序路径，也可以选择将`Composer`组件加入到右键快捷键，如下图所示
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_composer_1.png)
+![](/images/archive/img_composer_1.png)
 安装成功后，打开命令行，执行`composer --version`，如果出现下图所示，则说明安装成功。
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_composer_2.png)
+![](/images/archive/img_composer_2.png)
 
 修改`Composer`的配置文件，指定获取包的镜像服务地址。
 

@@ -9,9 +9,9 @@ categories: [Tech]
 本教程使用最常用的`PHP`集成环境`XAMPP`，`XAMPP`已经集成了`Apache`，`PHP`，`MySQL`等开发环境，非常方便，而且搭建简单。
 从`XAMPP`的[官网](https://www.apachefriends.org/zh_cn/index.html)下载安装包即可，本教程是在`Windows`下进行的，所以下载`Windows`版即可。
 下载完成后，进行安装，基本上是一路`Next`。安装完成后在开始里会出现一个`XAMPP`的文件夹，点击里面的`XAMPP Control Panel`既可启动`Xampp`的控制面板，`Apache`,`MySQL`等启动停止都可以在这里控制。如下图所示
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_PHP_ENV_1.png)
+![](/images/archive/img_PHP_ENV_1.png)
 启动`Apache`，在浏览器里输入`http://localhost`，如果出现如下页面则说明配置成功
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_PHP_ENV_2.png)
+![](/images/archive/img_PHP_ENV_2.png)
 本教程安装`PHP`的介绍到此为止，网上有很多关于`XAMPP`安装以及配置的教程，可以自行搜索。如果安装过程中出现问题，可以评论留言。
 ####安装`Composer`
 `Composer`是`PEAR`之后的一个很好用的包管理工具，也是安装`Laravel`的必备工具，详细的安装可以参考鄙人的博客[PHP依赖管理Composer](http://kdf5000.github.io/2015/07/26/PHP%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86Ciomposer%E7%9A%84%E5%AE%89%E8%A3%85/)。
@@ -41,7 +41,7 @@ Listen 8008  #监听的端口
 </VirtualHost>
 ```
 该配置指定了`apache`服务器监听`8008`是访问`Laravel`项目。此时启动`Apache`，访问`localhost:8008`，可能出现下面的`Access forbidden`错误页面。
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_laravel_2.png)
+![](/images/archive/img_laravel_2.png)
 
 * 出现上面的访问禁止的原因主要是`Apache`配置拒绝了所有的请求，最简单的就是注释掉，打开`xampp安装目录\apache\conf\httpd.conf`，修改下面的地方，注释掉`Require all denied`，将`AloolwOverride`改为`All`。
 ```
@@ -51,6 +51,6 @@ Listen 8008  #监听的端口
 </Directory>
 ```
 再次访问`localhost:8008`，出现下面的页面，说明安装成功。
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_laravel_3.png)
+![](/images/archive/img_laravel_3.png)
 
 

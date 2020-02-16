@@ -44,7 +44,7 @@ $sudo auditctl -w /etc/passwd -p rwxa
 
 如果不加-p参数，-w参数后面指定的是目录，则将会对指定目录所有访问进行监控。默认的权限是rwax，可以使用`auditctl -l`查看已经添加的规则
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/auditd-0.png)
+![](/images/archive/blog/image/auditd-0.png)
 
 
 
@@ -89,7 +89,7 @@ $sudo ausearch - f/etc/passwd
 $sudo aureport
 ```
 
- ![](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/auditd-1.png)
+ ![](/images/archive/blog/image/auditd-1.png)
 
 可以看出有51次授权失败，102次登录。可以使用下面命令查看授权失败的详细信息
 
@@ -97,7 +97,7 @@ $sudo aureport
 $sudo aureport -au
 ```
 
- ![](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/auditd-4.png)
+ ![](/images/archive/blog/image/auditd-4.png)
 
 凡是no（如2，5）的都是授权失败。可以看出是root用户ssh登录的时候失败。
 
@@ -107,7 +107,7 @@ $sudo aureport -au
 $sudo aureport -m
 ```
 
- ![](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/auditd-2.png)
+ ![](/images/archive/blog/image/auditd-2.png)
 
 
 
@@ -117,7 +117,7 @@ $sudo aureport -m
 
 如下：
 
- ![](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/auditd-3.png)
+ ![](/images/archive/blog/image/auditd-3.png)
 
 然后重启auditd即可
 

@@ -12,7 +12,7 @@ categories:
 
 在实际的程序设计中，工厂相当于一个对外的接口，那么这个接口的返回类型是确定的，那么我们怎么通过这个工厂来生产不同的产品发回给客户呢？很简单，做一个所有产品的“模子”就可以，这个“模子”有每个产品的所有特征，但是不能用，需要具体的产品实现这些特性，就是我们常说的`Interface`。
 使用类图表示如下：
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_Factory_Pattern.png)
+![](/images/archive/img_Factory_Pattern.png)
 #####`PHP`的实现
 * 编写一个接口 `Product.php`  
 
@@ -117,5 +117,5 @@ echo $factory->factory('ProductB')->getName();
  
 ```
 输出结果如下：
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_factory_pattern.png)
+![](/images/archive/img_factory_pattern.png)
 

@@ -9,7 +9,7 @@ comments: false
 * 邮箱: kdf5000@163.com 或 kongdefei@ict.ac.cn
 * GitHub: [https://github.com/KDF5000](https://github.com/KDF5000)
 * 博客地址: [kdf5000.com](http://kdf5000.com)
-* [中文简历](http://7sbpmg.com1.z0.glb.clouddn.com/blog/images/resume-zh_CN.pdf)/[英文简历](http://7sbpmg.com1.z0.glb.clouddn.com/blog/images/resume.pdf)
+* [中文简历](/images/archive/blog/images/resume-zh_CN.pdf)/[英文简历](/images/archive/blog/images/resume.pdf)
 
 ### ** 项目 **
 [HuntCode](http://huntcode.herokuapp.com): 类似于Demo8, Next的形式，HuntCode专注于开源项目的分享，将你所知道的优秀开源项目分享出去，让其他人可以在这里发现酷炫的开源项目，同时也能推广自己或者其他人的优秀项目.
@@ -48,4 +48,4 @@ comments: false
 - [只是为了好玩](https://book.douban.com/subject/25930025/) -->
 
 <!-- #### **联系方式**
-![](http://7sbpmg.com1.z0.glb.clouddn.com/images/cv.png) -->
+![](/images/archive/images/cv.png) -->

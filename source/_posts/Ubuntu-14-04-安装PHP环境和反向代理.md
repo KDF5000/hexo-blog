@@ -34,7 +34,7 @@ ProxyPass           /      http://192.168.0.3:8006/
 ```
 如下所示
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_apache-proxy.png)
+![](/images/archive/img_apache-proxy.png)
 
 然后重启apache服务器
 ```

@@ -27,7 +27,7 @@ $ ruby -v
 ```
 如果出现下图中的结果,说明安装成功了.  
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_ruby-v.png)
+![](/images/archive/img_ruby-v.png)
 
 <!--more-->
 
@@ -42,7 +42,7 @@ $ sudo ruby setup.rb
 ```
 如果出现下面的结果说明安装成功
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_gem-v.png)
+![](/images/archive/img_gem-v.png)
 
 ###安装`sqlite3`
 要想使用`Rails`,需要安装`Sqlite3`,大多数的`Unix`系统已经安装的有了,可以使用**sqlite3 -verion**检查是否安装了`sqlite3`，如果已经安装，则直接进入下一步，如果没有安装则，运行下面的命令进行安装
@@ -61,7 +61,7 @@ $rails -v
 ```
 如果出现下图,恭喜你安装成功了.  
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_rails-v.png)
+![](/images/archive/img_rails-v.png)
 
 ###测试`Rails`
 使用下面的命令创建一个新的`Rails`项目
@@ -82,15 +82,15 @@ gem 'therubyracer'
 * 安装`Node.js`,
 > $sudo apt-get install nodejs
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_rails-server-failed.png)
+![](/images/archive/img_rails-server-failed.png)
 
 再次启动`Rails server`,如果出现下面的信息则说明启动成功.
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_server_start.png)
+![](/images/archive/img_server_start.png)
 
 然后访问**http://localhost:3000**,出现下面的页面则说明安装`Rails`成功.
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_server.png)
+![](/images/archive/img_server.png)
 
 **PS:** 在启动`Rails server`的过程中可能还会出现一个缺少`libreadlinedev`(确切的名字不太记得了)的错误,这时只需按照提示安装缺失库,然后重新编译安装`Ruby`即可.
 

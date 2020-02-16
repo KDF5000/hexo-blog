@@ -10,7 +10,7 @@ categories: [Tech]
 
 <!--more-->
 
-![kindle-0](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/kindle-0.png)
+![kindle-0](/images/archive/blog/image/kindle-0.png)
 
 #### Resilio Sync服务搭建
 
@@ -34,7 +34,7 @@ $ sudo dpkg -i bittorrent-sync-pi-server_2.0.128_armhf.deb
 
 通过浏览器访问http://yourrespbianip:8888 ,其中是你respian的ip地址或者你托管的服务器地址，你应该看到下面的界面 
 
- ![kindle-1](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/kindle-1.png)
+ ![kindle-1](/images/archive/blog/image/kindle-1.png)
 
 然后到[Kindle伴侣](http://kindlefere.com/)随便点一个[每周一书]可以找到使用bittorrentSync同步的同步key，通过web页面添加到你自己的sync服务器即可。记得你选择的文件夹要有写入权限，我是直接给的777。
 
@@ -65,4 +65,4 @@ $nohup python server.py /home/ubuntu/kongdefei/SyncBook > sync.out 2>&1 &
 
 至此，你就可以享受你心爱的kindle每周定时收到一本优秀的电子书了。
 顺便晒一下树莓派[憨笑]
-![](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/raspberry.jpeg)
+![](/images/archive/blog/image/raspberry.jpeg)

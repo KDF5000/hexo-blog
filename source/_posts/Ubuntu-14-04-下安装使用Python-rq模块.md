@@ -30,11 +30,11 @@ $ netstat -an | grep 6379
 ```
 结果：
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_rq-redis-bind.png)
+![](/images/archive/img_rq-redis-bind.png)
 
 因为`Redis`默认使用的端口是6379，该命令可以查看6379端口监听的ip ，可以看到 `Redis`默认绑定的是`127.0.0.1`，可以在`/etc/redis/redis.conf`中看到该设置。
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_rq-redis-redis-conf.png)
+![](/images/archive/img_rq-redis-redis-conf.png)
 
 `Redis`的默认配置绑定了`127.0.0.1`，注释掉**bind 127.0.0.1**即可。然后重启`Redis`。
 ```
@@ -42,7 +42,7 @@ $ sudo /etc/init.d/redis-server restart
 ```
 再次执行`netstat -an | grep 6379`
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_rq-redis-redis-netstat.png)
+![](/images/archive/img_rq-redis-redis-netstat.png)
 
 可以看到改变了 ，`Redis`已经可以接受同一个局域网内的`redis cli`连接了
 ####安装`rq-dashboard`
@@ -57,11 +57,11 @@ $rq-dashboard -u "redus://192.168.0.107:6379"
 ```
 其中`-u`参数是需要使用的`Redis`连接地址，启动成功后可以看到下面的信息
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_rq-rqdashboard-start.png)
+![](/images/archive/img_rq-rqdashboard-start.png)
 
 可以看出`Rq dashboard`的版本信息，以及运行的地址端口，也就是我们可以通过浏览器访问，默认的端口是*9181*，`IP`地址是启动`rq-dashboard`的机器`ip`，在同一局域网的电脑访问`http://192.168.0.107:9181`，其中`192.168.0.107`是启动`rq-dashboard`的电脑`ip`。
 
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_rq-rqdashboard-web.png)
+![](/images/archive/img_rq-rqdashboard-web.png)
 
 `Rq-dashboard`是一个很有用的工具，可以图形化的监控`rq`的工作状态，但是美中不足，不能控制`worker`的工作，不过相信应该很快就会支持这些功能了。
 

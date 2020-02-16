@@ -9,7 +9,7 @@ categories: [Tech]
 具体实现的时候，需要定义一个统一的接口，然后命令处理者实现接口，然后命令发号者用一个list保存所有注册的命令处理者，每个命令处理者会处理特定的一个或者一些命令，当发令者发送命令时，遍历list向已经注册的命令处理者发送命令，收到一个正确处理的信息即说明改命令已经有人处理。
 
 类图如下：
-![Alt text](http://7sbpmg.com1.z0.glb.clouddn.com/blog/image/commandchain.png)
+![Alt text](/images/archive/blog/image/commandchain.png)
 
 <!--more-->
 

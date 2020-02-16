@@ -24,14 +24,14 @@ categories: [Tech]
 $ python --version
 ```
 如果看到下面的输出，说明`Python`的环境已经安装，我这里显示的是`Python 2.7.6`，版本也是`2.7`的满足要求。如果没有出现下面的信息，那么请读者自行百度安装`Python`，本文不介绍`Python`的安装（网上一搜一堆）。
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_scrapy_python.png)
+![](/images/archive/img_scrapy_python.png)
 
 #####检查`lxml`和`OpenSSL `是否安装
 假设已经安装了`Python`，在控制台输入`python`，进入`Python`的交互环境。
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_scrapy_lxml_ssl.png)
+![](/images/archive/img_scrapy_lxml_ssl.png)
 
 然后分别输入`import lxml`和`import OpenSSL`如果没有报错，说明两个依赖都已经安装。
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_scrapy_lxml_openssl.png)
+![](/images/archive/img_scrapy_lxml_openssl.png)
 
 ####安装`python-dev`和`libevent`
 `python-dev`是`linux`上开发`python`比较重要的工具，以下的情况你需要安装
@@ -57,13 +57,13 @@ $ sudo apt-get install python-pip
 $ sudo pip install scrapy
 ```
 记住一定要获得`root`权限，否则会出现下面的错误。
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_scrapy_exception.png)
+![](/images/archive/img_scrapy_exception.png)
 
 至此`scrapy`安装完成，使用下面的命令检查`Scrapy`是否安装成功。
 ```
 $ scrapy version
 ```
 显示如下结果说明安装成功，此处的安装版本是`1.02`
-![](http://7sbpmg.com1.z0.glb.clouddn.com/img_scrapy_version.png)
+![](/images/archive/img_scrapy_version.png)
 
 

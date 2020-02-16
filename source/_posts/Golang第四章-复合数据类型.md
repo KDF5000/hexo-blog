@@ -40,7 +40,7 @@ func zero(ptr *[32]byte) {
 
 ### Slice
 Slice(切片)代表变长的序列，序列中每个元素都有相同的类型。 
-![80066410.png](http://7sbpmg.com1.z0.glb.clouddn.com/blog/images/6F89E07747579464A98601695116E687.png)
+![80066410.png](/images/archive/blog/images/6F89E07747579464A98601695116E687.png)
 数组和Slice的关系：一个slice是一个轻量级的数据结构，提供了访问**数组**子序列或者全部元素的功能，而且slice的底层确实引用了一个数组对象。一个slice有三个部分组成：指针，长度和容量。指针指向第一个slice元素对应的底层数组元素的地址，这个第一个元素并不一定是数组的第一个元素。长度对应slice元素的数目，长度不能超过容量，容量一般是从slice的开始位置到底层数据的结尾位置。内置的len和cap函数分别返回slice的长度和容量. 如果切片的操作超出了cap(s)的上限则会导致一个panic异常，但是超出len(s)则意味着扩展了slice，因为新的slice的长度会变大。
 slice的初始化
 ```

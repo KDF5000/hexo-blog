@@ -26,7 +26,7 @@ Facebook作为全球最大的图片分享社区，其图片，视频的存储量
 但是Facebook的大神们并没有屈服，经过两年时间的研发上线运行，Haystack诞生了！Haystack解决方案的核心点就是通过减少文件系统元数据的大小，保证其能够常驻内存，从而减少磁盘的操作次数。工程师们分析了Facebook的图片数据，图片有个显著的特征：一次上传，经常读，永不修改，很少删除。针对这个特点，他们认为文件系统的元数据里有很多属性，比如权限等都是多余的，因此尽可能的减少元数据的大小，并将其保存到内存，这样可以只用一次的磁盘操作就从文件里读出图片数据，并且他们讲多个图片追加写入到一个大文件里，从而进一步的减少了元数据的数量。
 
 Haystack的整体架构如图：
-![haystack_arch.jpeg](http://7sbpmg.com1.z0.glb.clouddn.com/blog/images/haystack_arch.jpeg?imageView/0/w/500/)
+![haystack_arch.jpeg](/images/archive/blog/images/haystack_arch.jpeg?imageView/0/w/500/)
 从架构图可以看出Haystack一共包含了四个核心组件：CDN, Haystack Directory, Haystack Cache, Haystack Store. 下面简略介绍一下每个组件的主要功能，最后我们再给出读写操作的详细流程。
 
 #### Haystack Directory

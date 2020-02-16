@@ -76,7 +76,7 @@ hchan结构体使**用一个环形队列**来保存groutine之间传递的数据
 
 ### 发送和接收
 向channel发送和从channel接收数据主要涉及hchan里的四个成员变量，借用Kavya ppt里的图示，来分析发送和接收的过程。
-![hchan white ](http://7sbpmg.com1.z0.glb.clouddn.com/blog/images/hchan_white_gif.gif?imageView/0/w/600/)
+![hchan white ](/images/archive/blog/images/hchan_white_gif.gif?imageView/0/w/600/)
 还是以前面的任务队列为例:
 ```Go
 //G1
@@ -106,7 +106,7 @@ func worker(ch chan Task){
 
 #### Goroutine Pause/Resume
 goroutine是Golang实现的用户空间的轻量级的线程，有runtime调度器调度，与操作系统的thread有多对一的关系，相关的数据结构如下图:
-![](http://7sbpmg.com1.z0.glb.clouddn.com/blog/images/schedule.png?imageView/0/w/600/) 
+![](/images/archive/blog/images/schedule.png?imageView/0/w/600/) 
 
 其中M是操作系统的线程，G是用户启动的goroutine，P是与调度相关的context，每个M都拥有一个P，P维护了一个能够运行的goutine队列，用于该线程执行。
 
@@ -128,14 +128,14 @@ type waitq struct {
  ```
 
  实际上，当G1变为waiting状态后，会创建一个代表自己的sudog的结构，然后放到sendq这个list中，sudog结构中保存了channel相关的变量的指针(如果该Goroutine是sender，那么保存的是待发送数据的变量的地址，如果是receiver则为接收数据的变量的地址，之所以是地址，前面我们提到在传输数据的时候使用的是copy的方式)
- ![](http://7sbpmg.com1.z0.glb.clouddn.com/blog/images/sendq.png?imageView/0/w/600/)
+ ![](/images/archive/blog/images/sendq.png?imageView/0/w/600/)
  
  当G2从ch中接收一个数据时，会通知调度器，设置G1的状态为runnable，然后将加入P的runqueue里，等待线程执行.
- ![](http://7sbpmg.com1.z0.glb.clouddn.com/blog/images/G12Runnable.png?imageView/0/w/600/)
+ ![](/images/archive/blog/images/G12Runnable.png?imageView/0/w/600/)
  
  ### wait empty channel
  前面我们是假设G1先运行，如果G2先运行会怎么样呢？如果G2先运行，那么G2会从一个empty的channel里取数据，这个时候G2就会阻塞，和前面介绍的G1阻塞一样，G2也会创建一个sudog结构体，保存接收数据的变量的地址，但是该sudog结构体是放到了recvq列表里，当G1向ch发送数据的时候，**runtime并没有对hchan结构体题的buf进行加锁，而是直接将G1里的发送到ch的数据copy到了G2 sudog里对应的elem指向的内存地址！**
- ![](http://7sbpmg.com1.z0.glb.clouddn.com/blog/images/G2%20wait.png?imageView/0/w/600/) 
+ ![](/images/archive/blog/images/G2wait.png?imageView/0/w/600/) 
 
  ## 总结
 Golang的一大特色就是其简单搞笑的天然并发机制，使用goroutine和channel实现了CSP模型。理解channel的底层运行机制对灵活运用golang开发并发程序有很大的帮助，看了Kavya的分享，然后结合golang runtime相关的源码(源码开源并且也是golang实现简直良心！),对channel的认识更加的深刻，当然还有一些地方存在一些疑问，比如goroutine的调度实现相关的，还是要潜心膜拜大神们的源码！
