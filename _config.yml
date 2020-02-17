@@ -72,6 +72,7 @@ theme: reading
 
 # reading theme setting
 theme_config:
+  favicon: /favicon.ico
   keywords: KDF5000, OpenHex
   menu:
     Blog: /
