@@ -14,13 +14,22 @@ categories: [Think]
 上面巴拉巴拉都是废话，其实灵动的诞生源于自己的一个小需求，每天接受大量的信息、知识，脑子里也有各种异想天开的idea，但是每次都未成形就忘的一干二净，因此很希望有个APP能够整理自己的这些小思绪，这么一说下个印象笔记不就行了？？但是但是，如果有个app能够自动关联自己历史的一些idea，能够将一些可能相关的idea给整理出来，也许能够成为一个大新闻呢！如果能够将这些想法共享出去，召集一下志同道合的小伙伴一同讨论，也许擦出来火花呢？这样一想感觉酷酷的，然后拍板子，自己开发一个！可是当时哪懂什么机器学习，深度学习这么高大上的东西，于是乎，灵动最最最核心的智能化功能就拜拜了，最后成了一个笔记+论坛的应用！！！当然现在也不知道怎么实现那个核心功能，如果有大神知道怎么实现了，带我飞！还有个类似的产品原型还在脑子里，也许可以一起作为个小目标。
 
 下面是APP的演示视频：
-<div align=center>
+
+<!-- <div align=center>
  <iframe 
     width=768 height=432  
-    src="/images/archive/video/moment.mp4"   
+    src="blob:https://www.bilibili.com/24cd5d91-898e-44f3-bb2a-f7cc267ca95c"   
     frameborder=0 allowfullscreen play="false">  
  </iframe>
-</div> 
+</div>  -->
+
+<iframe
+ src="//player.bilibili.com/player.html?aid=89671060&cid=153154347&page=1" 
+ scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"
+ width="100%"
+ height=436 >
+
+</iframe>
 
 <!-- more -->
 
