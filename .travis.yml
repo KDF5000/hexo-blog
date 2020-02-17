@@ -13,7 +13,8 @@ before_script:
   - git submodule init
 
 script:
-  - gulp build
+    # - gulp build
+  - npm run generate
 
 after_script:
   - cd public
