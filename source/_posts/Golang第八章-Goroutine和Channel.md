@@ -4,7 +4,8 @@ date: 2017-05-07 20:36:18
 categories: [Tech]
 tags: [Golang, 学习笔记]
 ---
-* 并发编程模型
+
+并发编程模型
  - 顺序通信进程(Communicating Sequential Processes) CSP
   值会在不同的实例(goroutine)中传递
  - 多线程共享内存
