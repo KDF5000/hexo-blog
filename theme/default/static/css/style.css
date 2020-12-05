@@ -271,7 +271,7 @@ body {
     padding: 2em 3em;
 }
 
-.archive h3 {
+.archive .year {
     font-size: 24px;
 }
 
