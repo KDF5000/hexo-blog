@@ -1,3 +1,4 @@
+---
 title: Ubuntu 14.04 下安装使用Python rq模块
 date: 2015-08-23 14:00:16
 tags: [Python, Ubuntu, 分布式,Python队列]

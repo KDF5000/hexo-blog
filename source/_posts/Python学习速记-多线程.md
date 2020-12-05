@@ -1,3 +1,4 @@
+---
 title: Python学习速记--多线程
 date: 2015-07-21 12:26:25
 tags: [Python,学习笔记,多线程]

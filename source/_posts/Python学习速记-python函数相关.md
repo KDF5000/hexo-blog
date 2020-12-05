@@ -1,3 +1,4 @@
+---
 title: Python学习速记--python函数相关
 date: 2015-07-21 09:01:02
 tags: [Python, 学习笔记]

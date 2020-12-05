@@ -1,3 +1,4 @@
+---
 title: Laravel入门教程之一--安装
 date: 2015-07-27 12:11:58
 tags: [PHP]

@@ -1,3 +1,4 @@
+---
 title: awk的使用入门
 date: 2016-04-30 16:05:46
 tags: [Linux]

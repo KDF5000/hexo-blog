@@ -1,3 +1,4 @@
+---
 title: Python学习速记--面向对象
 date: 2015-07-21 12:18:18
 tags: [Python, 学习笔记]

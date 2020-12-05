@@ -1,3 +1,4 @@
+---
 title: Ubuntu下Scrapy的安装
 date: 2015-08-11 23:06:56
 tags: [Python, Scrapy, Linux]

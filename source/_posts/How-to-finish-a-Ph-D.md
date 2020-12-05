@@ -1,9 +1,9 @@
+---
 title: How to finish a Ph.D.
 date: 2016-03-29 12:17:32
 tags: [杂谈]
 categories: [Think]
 ---
-----
 A few years ago I was asked by several Ph.D. students what advice I could give to finish a Ph.D. While I don't think there is only one answer I do have some principles that worked well for me- if you are a current PhD student hopefully you will find this useful also. If you have any comments or suggestions, I'd love to hear from you.
 
 Over the years I have received many positive comments from Ph.D. students from the U.S., Canada, and as far as China and Korea. Several students have linked this site form their sites. Thank you so much for your feedback. It means a lot to me that some of my thoughts made a difference to you.

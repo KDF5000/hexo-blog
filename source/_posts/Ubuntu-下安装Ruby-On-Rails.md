@@ -1,3 +1,4 @@
+---
 title: Ubuntu 下安装Ruby On Rails
 date: 2015-09-25 23:39:46
 tags: [Ruby,Rails]

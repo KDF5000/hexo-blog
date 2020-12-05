@@ -1,3 +1,4 @@
+---
 title: 面向HBase的内存key-value缓存的实现
 date: 2016-06-19 09:54:46
 tags: [HBase,Cache, Redis]

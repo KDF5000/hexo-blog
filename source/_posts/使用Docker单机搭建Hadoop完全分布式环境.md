@@ -1,3 +1,4 @@
+---
 title: 使用Docker单机搭建Hadoop完全分布式环境
 date: 2016-05-16 18:40:21
 tags: [分布式, Docker, Hadoop&Hbase]

@@ -1,3 +1,4 @@
+---
 title: PHP与Redis的仿Twitter实例
 date: 2015-07-24 11:02:27
 tags: [PHP, Redis]

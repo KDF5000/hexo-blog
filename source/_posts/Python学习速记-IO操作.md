@@ -1,3 +1,4 @@
+---
 title: Python学习速记--IO操作
 date: 2015-07-21 12:22:18
 tags: [Python,学习笔记]

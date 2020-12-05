@@ -1,3 +1,4 @@
+---
 title: Ubuntu 14.04 安装图形监控工具Graphite
 date: 2015-08-28 13:35:36
 tags: [Python, Linux, 数据监控, Graphite]

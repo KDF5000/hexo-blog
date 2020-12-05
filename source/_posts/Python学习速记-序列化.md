@@ -1,3 +1,4 @@
+---
 title: Python学习速记--序列化
 date: 2015-07-21 12:24:38
 tags: [Python,学习笔记]

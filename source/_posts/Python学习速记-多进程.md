@@ -1,3 +1,4 @@
+---
 title: Python学习速记--多进程
 date: 2015-07-21 12:25:31
 tags: [Python, 学习笔记,多进程]
